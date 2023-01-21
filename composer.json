@@ -1,0 +1,27 @@
+{
+  "name": "defstudio/laravel-restore",
+  "description": "Restore solution for Laravel apps",
+  "minimum-stability": "dev",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Nicola Posa",
+      "email": "nicola.posa@defstudio.it"
+    }
+  ],
+  "require": {
+    "php": "^8.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "DefStudio\\Restore\\": "src"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "DefStudio\\Restore\\RestoreServiceProvider"
+      ]
+    }
+  }
+}
