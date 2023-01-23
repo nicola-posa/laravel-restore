@@ -25,10 +25,6 @@ class RestoreServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        Route::get('restore', function () {
-           dd('hello!');
-        });
-
         if ($this->app->runningInConsole()) {
             $this->commands([
                 RestoreCommand::class,
