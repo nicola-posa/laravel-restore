@@ -29,14 +29,16 @@ class RestoreCommand extends Command
      */
     public function handle()
     {
-       // $disk = Storage::build([
-       //          'driver' => 'local',
-       //          'root' => base_path('restore'),
-       //  ]);
+       $disk = Storage::build([
+                'driver' => 'local',
+                'root' => base_path('restore'),
+        ]);
 
         if (!Storage::exists('restore-temp')) {
             Storage::makeDirectory('restore-temp');
         }
+
+        $disk->get('Images.zip');
 
         $this->info('Move file zip into src/storage/app/restore-temp');
 
