@@ -2,6 +2,8 @@
 
 namespace DefStudio\Restore;
 
+use DefStudio\Restore\Commands\RestoreCommand;
+use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
 
 class RestoreServiceProvider extends ServiceProvider
@@ -23,6 +25,14 @@ class RestoreServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        Route::get('restore', function () {
+           dd('hello!');
+        });
+
+        if ($this->app->runningInConsole()) {
+            $this->commands([
+                RestoreCommand::class,
+            ]);
+        }
     }
 }
